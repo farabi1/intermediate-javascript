@@ -12,7 +12,6 @@ const allPhone = () => {
 
 const phoneDetails = (phones) => {
     for (const phone of phones) {
-        console.log(phone);
         const parent = document.getElementById("phone-container");
 
         const div = document.createElement("div");
@@ -22,8 +21,8 @@ const phoneDetails = (phones) => {
                     <img src="" class="card-img-top w-25" alt="">
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">${phone_name}</h4>
-                    <h5 class="card-text">brand</h5>
+                    <h4 class="card-title">${phone.phone_name}</h4>
+                    <h5 class="card-text">Brand: ${phone.brand}</h5>
                     <button href="#" class="btn btn-success text-white">Details</button>
                 </div>
             </div>`
