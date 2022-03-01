@@ -28,6 +28,4 @@ const phoneDetails = (phones) => {
             </div>`
         parent.appendChild(div);
     }
-
-
 }

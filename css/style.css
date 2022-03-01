@@ -1,0 +1,6 @@
+#phone-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 5rem;
+    gap: .8rem;
+}
