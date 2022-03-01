@@ -16,9 +16,9 @@ const phoneDetails = (phones) => {
 
         const div = document.createElement("div");
         div.innerHTML = `
-            <div class="card">
+            <div class="card rounded d-flex align-items-center">
                 <div class="phone-pic">
-                    <img src="" class="card-img-top w-25" alt="">
+                    <img src="${phone.image}" class="card-img-top" alt="">
                 </div>
                 <div class="card-body">
                     <h4 class="card-title">${phone.phone_name}</h4>

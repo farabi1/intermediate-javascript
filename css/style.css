@@ -4,3 +4,17 @@
     margin-top: 5rem;
     gap: .8rem;
 }
+
+@media screen and (max-device-width : 688px) {
+    #phone-container{       
+        grid-template-columns: repeat(1,1fr);       
+    }
+}
+
+@media only screen 
+and (min-device-width : 688px) 
+and (max-device-width : 992px) {
+    #phone-container{        
+        grid-template-columns: repeat(2,1fr);        
+    }
+}
