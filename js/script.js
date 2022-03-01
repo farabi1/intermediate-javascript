@@ -23,9 +23,21 @@ const phoneDetails = (phones) => {
                 <div class="card-body">
                     <h4 class="card-title">${phone.phone_name}</h4>
                     <h5 class="card-text">Brand: ${phone.brand}</h5>
-                    <button href="#" class="btn btn-success text-white">Details</button>
+                    <button onclick="details('${phone.slug}')" class="btn btn-success text-white">Details</button>
                 </div>
             </div>`
         parent.appendChild(div);
     }
-}
+};
+
+
+const details = (id) => {
+    const url2 = `https://openapi.programming-hero.com/api/phone/${id}`;
+    fetch(url2)
+        .then((res) => res.json())
+        .then(data => console.log(data);
+};
+ 
+// const detailsData = (info) => {
+//     console.log(detailsData);
+// }
