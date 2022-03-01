@@ -35,7 +35,7 @@ const details = (id) => {
     const url2 = `https://openapi.programming-hero.com/api/phone/${id}`;
     fetch(url2)
         .then((res) => res.json())
-        .then(data => console.log(data);
+        .then(data => console.log(data));
 };
  
 // const detailsData = (info) => {
