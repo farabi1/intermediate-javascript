@@ -72,6 +72,8 @@ const detailsData = (info) => {
         <h6>Chipset:${info.mainFeatures.chipset}</h6>
         <h6>Memory:${info.memory}</h6>
         <h6>Sensor:${info.mainFeatures.sensors.join()}</h6>
+        <h6>Others:${info.others}</h6>
+        <h6>Release Date:${info.releaseDate}</h6>
         <h6>Others:${info.something ? info.something.others : "no result found"}</h6>
     </div>
    `
