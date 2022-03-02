@@ -82,7 +82,7 @@ const detailsData = (info) => {
 
         <h6>Others: Bluetooth-${info.others.Bluetooth},GPS-${info.others.GPS},NFC-${info.others.NFC},Radio-${info.others.Radio},USB-${info.others.USB},WLAN-${info.others.WLAN}</h6>
 
-        <h6>Release Date:${info.releaseDate ? info.releaseDate : "no result found"}</h6>
+        <h6>Release Date:${info.releaseDate ? info.releaseDate : "No data found"}</h6>
     </div>
    `
 
