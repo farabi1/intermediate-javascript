@@ -1,4 +1,6 @@
 const allPhone = () => {
+    document.getElementById('phone-container').innerHTML = "";
+
     const searchText = document.getElementById("search-box").value;
 
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
