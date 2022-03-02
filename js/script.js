@@ -3,18 +3,34 @@ const allPhone = () => {
 
     const searchText = document.getElementById("search-box").value;
 
+    // Error Handling For SearchBar 
+
+    const error = document.getElementById("error-info")
+
+    if (typeof searchText !== 'string') {
+        error.innerText = "Please insert correct name";
+        searchText.value = '';
+
+    } else {
+
+    }
+
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     fetch(url)
         .then((res) => res.json())
         .then((data) => phoneDetails(data.data));
 
 
-    console.log(url);
+
 };
 
 const phoneDetails = (phones) => {
 
     const parent = document.getElementById("phone-container");
+
+
+    // Slice for showing only 20 phone result 
+
     const first20Phone = phones.slice(0, 20);
 
     for (const phone of first20Phone) {
@@ -55,8 +71,9 @@ const detailsData = (info) => {
         <h5>Display:${info.mainFeatures.displaySize}</h5>
         <h6>Chipset:${info.mainFeatures.chipset}</h6>
         <h6>Memory:${info.memory}</h6>
-        <h6>Sensor:${info.others.Bluetooth}</h6>
-        <h6>Others:</h6>
+        <h6>Sensor:${info.mainFeatures.sensors.join()}</h6>
+        <h6>Others:${info.something ? info.something.others : "no result found"}</h6>
     </div>
    `
+    console.log(info)
 }
