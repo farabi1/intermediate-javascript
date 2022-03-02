@@ -3,19 +3,20 @@ const allPhone = () => {
     document.getElementById('details-container').innerHTML = "";
 
     const searchText = document.getElementById("search-box").value;
-
-    console.log(typeof searchText);
+   
+    // console.log(typeof searchText);
 
     // Error Handling For SearchBar 
-
+    const searchInput = parseFloat(searchText);
 
     const error = document.getElementById("error-info")
 
-    if ((typeof searchText) !== "string") {
+    if ((typeof searchText) !== "string" || searchInput <= 0) {
         error.innerText = "please give a number";
+        
 
     } else {
-        
+
         const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
         fetch(url)
             .then((res) => res.json())
