@@ -1,4 +1,4 @@
-#phone-container{
+/* #phone-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     margin-top: 5rem;
@@ -17,4 +17,4 @@ and (max-device-width : 992px) {
     #phone-container{        
         grid-template-columns: repeat(2,1fr);        
     }
-}
+} */
