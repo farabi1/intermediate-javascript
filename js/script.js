@@ -4,8 +4,6 @@ const allPhone = () => {
 
     const searchText = document.getElementById("search-box").value;
 
-    // console.log(typeof searchText);
-
     // Error Handling For SearchBar 
 
 
@@ -56,7 +54,7 @@ const details = (id) => {
 };
 
 const detailsData = (info) => {
-    console.log(info);
+
     document.getElementById("details-container").innerHTML = `
         <div>
             <img src="${info.image}" alt="">
@@ -80,5 +78,5 @@ const detailsData = (info) => {
         <h6>Release Date:${info.releaseDate ? info.releaseDate : "no result found"}</h6>
     </div>
    `
-    console.log(info)
+
 }
