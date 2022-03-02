@@ -4,15 +4,24 @@ const allPhone = () => {
 
     const searchText = document.getElementById("search-box").value;
 
+    console.log(typeof searchText);
+
     // Error Handling For SearchBar 
 
 
     const error = document.getElementById("error-info")
 
-    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
-    fetch(url)
-        .then((res) => res.json())
-        .then((data) => phoneDetails(data.data))
+    if ((typeof searchText) !== "string") {
+        error.innerText = "please give a number";
+
+    } else {
+        
+        const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => phoneDetails(data.data))
+    }
+
 };
 
 const phoneDetails = (phones) => {
@@ -54,15 +63,14 @@ const details = (id) => {
 };
 
 const detailsData = (info) => {
-
+    console.log(info);
     document.getElementById("details-container").innerHTML = `
         <div>
             <img src="${info.image}" alt="">
-
         <h3>Name: ${info.name}</h3> 
 
         <h4>Brand: ${info.brand}</h4>  
-
+          
         <h4>Storage: ${info.mainFeatures.storage}</h4>
 
         <h5>Display: ${info.mainFeatures.displaySize}</h5>
@@ -78,5 +86,5 @@ const detailsData = (info) => {
         <h6>Release Date:${info.releaseDate ? info.releaseDate : "no result found"}</h6>
     </div>
    `
-
+    console.log(info)
 }
