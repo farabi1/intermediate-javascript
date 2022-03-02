@@ -60,15 +60,24 @@ const detailsData = (info) => {
     document.getElementById("details-container").innerHTML = `
         <div>
             <img src="${info.image}" alt="">
-        <h3>Name: ${info.name}</h3>    
-        <h4>Brand: ${info.brand}</h4>    
+
+        <h3>Name: ${info.name}</h3> 
+
+        <h4>Brand: ${info.brand}</h4>  
+
         <h4>Storage: ${info.mainFeatures.storage}</h4>
+
         <h5>Display: ${info.mainFeatures.displaySize}</h5>
+
         <h6>Chipset: ${info.mainFeatures.chipSet}</h6>
+
         <h6>Memory: ${info.mainFeatures.memory}</h6>
+
         <h6>Sensor: ${info.mainFeatures.sensors.join()}</h6>
+
         <h6>Others: Bluetooth-${info.others.Bluetooth},GPS-${info.others.GPS},NFC-${info.others.NFC},Radio-${info.others.Radio},USB-${info.others.USB},WLAN-${info.others.WLAN}</h6>
-        <h6>Release Date:${info.releaseDate}</h6>
+
+        <h6>Release Date:${info.releaseDate ? info.releaseDate : "no result found"}</h6>
     </div>
    `
     console.log(info)
