@@ -32,12 +32,24 @@ const phoneDetails = (phones) => {
 
 
 const details = (id) => {
-    const url2 = `https://openapi.programming-hero.com/api/phone/${id}`;
-    fetch(url2)
+    const url = `https://openapi.programming-hero.com/api/phone/${id}`;
+    fetch(url)
         .then((res) => res.json())
-        .then(data => console.log(data));
+        .then(data => detailsData(data.data.mainFeatures));
 };
- 
-// const detailsData = (info) => {
-//     console.log(detailsData);
-// }
+
+const detailsData = (info) => {
+    console.log(info);
+    document.getElementById("details-container").innerHTML = `
+        <div>
+            <img src="" alt="">
+        <h4>Storage:${info.storage}</h4>
+        <h5>Display:${info.displaySize}</h5>
+        <h6>Chipset:${info.chipset}</h6>
+        <h6>Memory:${info.memory}</h6>
+        <h6>Sensor:</h6>
+        <h6></h6>
+        <h6></h6>
+    </div>
+   `
+}
