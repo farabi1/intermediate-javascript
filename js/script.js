@@ -13,13 +13,13 @@ const allPhone = () => {
         searchText.value = '';
 
     } else {
+        const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => phoneDetails(data.data));
 
     }
 
-    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
-    fetch(url)
-        .then((res) => res.json())
-        .then((data) => phoneDetails(data.data));
 
 
 
