@@ -13,23 +13,29 @@ const allPhone = () => {
 };
 
 const phoneDetails = (phones) => {
-    for (const phone of phones) {
-        const parent = document.getElementById("phone-container");
+
+    const parent = document.getElementById("phone-container");
+    const first20Phone = phones.slice(0, 20);
+
+    for (const phone of first20Phone) {
 
         const div = document.createElement("div");
         div.innerHTML = `
-            <div class="card rounded d-flex align-items-center">
-                <div class="phone-pic">
-                    <img src="${phone.image}" class="card-img-top" alt="">
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">${phone.phone_name}</h4>
-                    <h5 class="card-text">Brand: ${phone.brand}</h5>
-                    <button onclick="details('${phone.slug}')" class="btn btn-success text-white">Details</button>
-                </div>
-            </div>`
+                <div class="card rounded d-flex align-items-center">
+                    <div class="phone-pic">
+                        <img src="${phone.image}" class="card-img-top" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">${phone.phone_name}</h4>
+                        <h5 class="card-text">Brand: ${phone.brand}</h5>
+                        <button onclick="details('${phone.slug}')" class="btn btn-success text-white">Details</button>
+                    </div>
+                </div>`
         parent.appendChild(div);
+
+
     }
+
 };
 
 
@@ -49,9 +55,8 @@ const detailsData = (info) => {
         <h5>Display:${info.mainFeatures.displaySize}</h5>
         <h6>Chipset:${info.mainFeatures.chipset}</h6>
         <h6>Memory:${info.memory}</h6>
-        <h6>Sensor:</h6>
-        <h6></h6>
-        <h6></h6>
+        <h6>Sensor:${info.others.Bluetooth}</h6>
+        <h6>Others:</h6>
     </div>
    `
 }
